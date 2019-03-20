@@ -1,0 +1,7 @@
+name: msdk
+description: sdk de auxílio ao desenvolvimento de plugins para lojas criadas em mineshop.com.br
+version: 1.0.0
+main: br.com.mineshop.spigot.msdk.MSDK
+load: POSTWORLD
+author: Sapiente <contato@clayderson.com.br>
+website: https://github.com/clayderson/msdk-spigot
