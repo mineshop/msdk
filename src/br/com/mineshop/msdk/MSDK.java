@@ -1,6 +1,6 @@
 package br.com.mineshop.msdk;
 
-import br.com.mineshop.msdk.webservice.endpoints.v1.Queue;
+import br.com.mineshop.msdk.webservice.endpoints.v1.QueueItem;
 import br.com.mineshop.msdk.exceptions.MsdkException;
 import br.com.mineshop.msdk.exceptions.WebServiceException;
 import com.google.gson.Gson;
@@ -15,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class MSDK {
-  public final String SDK_VERSION = "1.0.0";
+  public final String SDK_VERSION = "1.1.0";
   public final String API_ADDR = "https://api.mineshop.com.br/plugins";
 
   private int connectTimeout = 1500;
@@ -34,13 +34,13 @@ public class MSDK {
     this.authorization = authorization;
   }
 
-  public Queue[] getQueue() throws WebServiceException, MsdkException {
-    return this.getQueue("");
+  public QueueItem[] getQueueItems() throws WebServiceException, MsdkException {
+    return this.getQueueItems("");
   }
 
-  public Queue[] getQueue(String nickname) throws WebServiceException, MsdkException {
+  public QueueItem[] getQueueItems(String nickname) throws WebServiceException, MsdkException {
     String response = this.get(String.format("/v1/queue/%s", nickname));
-    return new Gson().fromJson(response, Queue[].class);
+    return new Gson().fromJson(response, QueueItem[].class);
   }
 
   public void hasBeenDelivered(String nickname, String queueItemUuid) throws MsdkException, WebServiceException {

@@ -1,6 +1,6 @@
 package br.com.mineshop.msdk.webservice.endpoints.v1;
 
-public class Queue {
+public class QueueItem {
   private String uuid;
   private String nickname;
   private String command;
