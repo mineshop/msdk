@@ -1,9 +1,10 @@
-package br.com.mineshop.spigot.msdk.Endpoints;
+package br.com.mineshop.msdk.webservice.endpoints.v1;
 
 public class Queue {
   private String uuid;
   private String nickname;
-  private String commands;
+  private String command;
+  private int slotsNeeded;
   private String type;
   private String status;
 
@@ -23,12 +24,20 @@ public class Queue {
     this.nickname = nickname;
   }
 
-  public String[] getCommands() {
-    return this.commands.split("\n");
+  public String getCommand() {
+    return this.command;
   }
 
-  public void setCommands(String commands) {
-    this.commands = commands;
+  public void setCommand(String command) {
+    this.command = command;
+  }
+
+  public int getSlotsNeeded() {
+    return this.slotsNeeded;
+  }
+
+  public void setSlotsNeeded(int slotsNeeded) {
+    this.slotsNeeded = slotsNeeded;
   }
 
   public String getType() {
